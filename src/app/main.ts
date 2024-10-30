@@ -1,12 +1,10 @@
 import * as pc from "playcanvas";
-import { setupAmmo } from "../uti/ammoModule.ts";
 import { createBox } from "../components/box.ts";
 import { createCamera } from "../components/camera.ts";
 import { createLight } from "../components/light.ts";
 import { InputHandler } from "../input/inputHandler.ts";
 import { SegmentManager } from "../components/segmentManager.ts";
 import { UIManager } from "../scene/UIManager";
-import { SoundManager } from "../audio/AudioManager.ts";
 window.onload = async () => {
   const canvas = document.createElement("canvas");
 
@@ -16,7 +14,6 @@ window.onload = async () => {
   app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
   app.setCanvasResolution(pc.RESOLUTION_AUTO);
   app.start();
-  const soundManager = new SoundManager(app);
   // const audioManager = new AudioManager(app);
   const input = new InputHandler();
   const cameraEntity = createCamera(app);
